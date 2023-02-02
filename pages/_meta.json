@@ -1,15 +1,17 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
+  "index": {
+    "title": "Home",
     "type": "page"
   },
+  "quick-start": "Quick start",
+  "how-it-works": "How it works",
+  "creating-forms": "Creating forms",
+  "validation": "Validation",
+  "using-your-form": "Using your form",
   "contact": {
     "title": "Contact ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://twitter.com/juciano_barbosa",
     "newWindow": true
   }
 }
