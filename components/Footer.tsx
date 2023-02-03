@@ -57,7 +57,7 @@ export function Footer({ menu }: { menu?: boolean }): ReactElement {
           </ul>
         </div>
       </div>
-      <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 mb-5">
+      <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400 pb-5">
         ©{" "}
         <a href="https://useform.org" className="hover:underline">
           Createform
