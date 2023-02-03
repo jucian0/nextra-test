@@ -2,7 +2,10 @@
   "index": {
     "title": "Home",
     "type": "page",
-    "display": "hidden"
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
   },
   "quick-start": "Quick start",
   "how-it-works": "How it works",

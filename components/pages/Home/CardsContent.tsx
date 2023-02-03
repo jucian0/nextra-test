@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { CreateformIcon } from "../../Icon";
 
-export default function HeroContent() {
+export default function CardsContent() {
 
   return (
-    <div className="isolate ">
+    <div className="isolate relative">
+      <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-800 lg:my-8" />
+
+
       <div className="px-6 pt-6 lg:px-8 justify-center flex">
         <CreateformIcon />
       </div>
