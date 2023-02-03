@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { useConfig, useTheme } from "nextra-theme-docs";
+import {
+  useConfig,
+  useTheme,
+  DocsThemeConfig,
+  ThemeSwitch,
+} from "nextra-theme-docs";
 // import { Footer } from "./components/Footer";
 // import Navigation from "./components/Navigation";
 // import HeaderLogo from "./components/HeaderLogo";
@@ -14,7 +19,7 @@ const SITE_ROOT = "https://turbo.build";
 /**
  * @type {import('nextra-theme-docs').DocsThemeConfig}
  */
-const theme = {
+const theme: DocsThemeConfig = {
   sidebar: {
     defaultMenuCollapseLevel: Number.POSITIVE_INFINITY,
   },
@@ -129,6 +134,7 @@ const theme = {
       <>
         <Github />
         <Discord />
+        <ThemeSwitch />
       </>
     ),
   },

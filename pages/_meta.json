@@ -1,7 +1,8 @@
 {
   "index": {
     "title": "Home",
-    "type": "page"
+    "type": "page",
+    "display": "hidden"
   },
   "quick-start": "Quick start",
   "how-it-works": "How it works",
@@ -12,6 +13,11 @@
     "title": "Contact ↗",
     "type": "page",
     "href": "https://twitter.com/juciano_barbosa",
-    "newWindow": true
+    "newWindow": true,
+    "display": "hidden"
+  },
+  "about": {
+    "title": "About",
+    "display": "hidden"
   }
 }

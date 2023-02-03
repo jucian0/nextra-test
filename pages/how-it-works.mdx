@@ -4,6 +4,8 @@ description: How Createform works, and why we decided to do it this way.
 tags: react, form, useform, createform, use-form, debounce, debounced, hook
 ---
 
+import Callout from "./../components/Callout";
+
 # Concepts
 
 When you are working on a project, you might want to use a form in different places, or maybe you have a form with a couple of steps in different components, how could you handle this?
@@ -45,18 +47,15 @@ The validation process can be done in three ways:
 - The second way is to use a `validate` function, this function will be called every time then the form is updated, and it will receive the form values and the form errors, and it should return an object with the new form errors.
 - The thrid way is the **inline validation**, this approach allow you to pass a validation schema in the register function.
 
-> More about inline validations [here](/docs/validation/inline-validation)
+<Callout type="info">
+  More about inline validations [here](/docs/validation/inline-validation)
+</Callout>
 
 ## Native elements vs Custom elements
 
 In web development we can find native elements like `<input>` and `<select>` and custom elements like `<Selectbox/>` and `<DatePicker/>`,
 there are some differences between them, native elements are HTML elements that are created by the browser, and custom elements are created by the developer,
 the developer can use native elements to build custom elements.
-
-By default `createForm` create a form using just a reference to communicate with fields, since fields like `<input>` and `<select>` are native elements, `createForm` can do it without problems,
-but if you want to use custom elements, `createForm` can't do it because most of them doesn't have a reference to native elements, and custom elements normally have an internal state, so to work with custom elements as native elements, we need a `Wrapper` component.
-
-> We need to use a Wrapper because we don't want to rerender the form every time the custom element changes. Wrapper prevents this and makes just the specific custom element rerender.
 
 ## Controlled vs Uncontrolled vs Debounced forms
 

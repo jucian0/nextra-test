@@ -4,6 +4,8 @@ description: When you use debounced form the debounce parameter delays the updat
 tags: react, form, useform,createform, use-form, debounce, debounced, hook, reactjs
 ---
 
+import Callout from "../../components/Callout";
+
 # Debounced mode
 
 ## Introduction
@@ -27,7 +29,7 @@ See more in Controlled Inputs with validation.
 
 Createform provides a `register` function, this function returns all properties to manager a field.
 
-```jsx
+```jsx copy
 import { createForm } from "@createform/react";
 
 const useForm = createForm({
@@ -46,12 +48,15 @@ const useForm = createForm({
 
 Use dot notation to create advanced objects or to map object values. Type an entry name and type or an entry property object.
 
-> Dot notation is used to access nested objects. For example, if you have an object with a nested object, you can access the nested object using dot notation; `info.name`.
-> Use dot notation to access nested arrays. For example, if you
-> have an object with a nested array, you can access the nested array using dot notation;
-> `info.array[2]`.
+<Callout type="info">
 
-```jsx
+- Dot notation is used to access nested objects. For example, if you have an object with a nested object, you can access the nested object using dot notation; `info.name`.
+- Use dot notation to access nested arrays. For example, if you
+- have an object with a nested array, you can access the nested array using dot notation; `info.array[2]`.
+
+</Callout>
+
+```jsx copy
 function Form() {
   const { register } = useForm();
 
@@ -68,3 +73,7 @@ function Form() {
 ## Demo
 
 {/* <Demo url="https://codesandbox.io/embed/useform-debounced-sdokv?fontsize=14&hidenavigation=1&theme=dark" /> */}
+
+```
+
+```

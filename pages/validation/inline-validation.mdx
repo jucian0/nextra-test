@@ -4,6 +4,8 @@ description: Learn how to validate form values using field by field.
 tags: react, form, useform, createform, use-form, debounce, debounced, hook, yup, validation, form-error, error, zod
 ---
 
+import Callout from "../../components/Callout";
+
 # Inline validation
 
 ## About HTML5 validations
@@ -18,14 +20,18 @@ When passing an object as argument, you can provide a property named `validate`.
 
 ### Example
 
-```jsx
+```jsx copy
 <input
   {...register({
-    type: 'email',
-    name: 'email',
+    type: "email",
+    name: "email",
     validate: yup.string().email().required(),
   })}
 />
 ```
 
-> **Observation**: The validate property in the register function can accept validations in either Yup or Zod format. The user can choose whichever format they are more comfortable with or find more suitable for their use case.
+<Callout type="info">
+  **Observation**: The validate property in the register function can accept
+  validations in either Yup or Zod format. The user can choose whichever format
+  they are more comfortable with or find more suitable for their use case.
+</Callout>

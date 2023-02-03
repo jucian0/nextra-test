@@ -43,7 +43,7 @@ If you are interested in this library,please leave a star: https://github.com/re
 
 In this first example I will show you how you can build a simple form and how you can define a controlled, uncontrolled or debounce form.
 
-```jsx
+```jsx copy
 import { createForm } from "@createform/react";
 
 const useAuthForm = createForm({
@@ -69,28 +69,28 @@ By default, Createform uses the uncontrolled approach.
 
 When working with real application validations forms are very common because this is the way you can verify if the input's value is correct or not. There are several validations solutions available, but when using Createform the default solution is Yup. With yup the process of validation is simple and powerful.
 
-```jsx
-import { createForm } from '@createform/react';
-import * as yup from 'yup';
+```jsx copy
+import { createForm } from "@createform/react";
+import * as yup from "yup";
 
 const validationSchema = yup.object().shape({
-  name: yup.string().required('This field is required'),
+  name: yup.string().required("This field is required"),
   email: yup
     .string()
-    .email('This field must be a valid e-mail')
-    .required('This field is required'),
-  pets: yup.array(yup.string().required('This field is required')),
-  accept: yup.bool().oneOf([true], 'Field must be checked'),
+    .email("This field must be a valid e-mail")
+    .required("This field is required"),
+  pets: yup.array(yup.string().required("This field is required")),
+  accept: yup.bool().oneOf([true], "Field must be checked"),
 });
 
 export const usePersonForm = createForm({
   initialValues: {
-    name: 'Jesse',
-    email: 'jesse@jesse.com',
-    pets: ['felix', 'lucky'],
+    name: "Jesse",
+    email: "jesse@jesse.com",
+    pets: ["felix", "lucky"],
     accepted: false,
   },
-  mode: 'onChange',
+  mode: "onChange",
   validationSchema,
 });
 
@@ -98,13 +98,13 @@ function ControlledForm() {
   const { register, state } = usePersonForm();
   return (
     <>
-      <input {...register('name')} />
+      <input {...register("name")} />
       <span>{touched.name && errors.name}</span>
-      <input type="email" {...register('email')} />
+      <input type="email" {...register("email")} />
       <span>{touched.email && errors.email}</span>
-      <input {...register('pets.0')} />
+      <input {...register("pets.0")} />
       <span>{touched.pets?.[0] && errors.pets?.[0]}</span>
-      <input type="checkbox" {...register('accept')} />
+      <input type="checkbox" {...register("accept")} />
       <span>{touched.accept && errors.accept}</span>
     </>
   );
@@ -115,18 +115,18 @@ function ControlledForm() {
 
 When you want to share the form state with other components you just need to use the form created before.
 
-```jsx
-import { usePersonForm } from './../usePersonForm';
+```jsx copy
+import { usePersonForm } from "./../usePersonForm";
 
 function StepForm() {
   const { register, state } = usePersonForm();
   return (
     <>
-      <input {...register('name')} />
-      <input {...register('email')} />
-      <input {...register('pets.0')} />
-      <input {...register('pets.1')} />
-      <input {...register('accept')} />
+      <input {...register("name")} />
+      <input {...register("email")} />
+      <input {...register("pets.0")} />
+      <input {...register("pets.1")} />
+      <input {...register("accept")} />
     </>
   );
 }

@@ -53,15 +53,15 @@ The create-react-app creates some files that we will not use for this tutorial, 
 ### index.css
 
 ```css
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
 
-@import './../node_modules/bootstrap/dist/css/bootstrap.css';
+@import "./../node_modules/bootstrap/dist/css/bootstrap.css";
 ```
 
 ### App.js
 
 ```javascript
-import React from 'react';
+import React from "react";
 
 function App() {
   return <div></div>;
@@ -73,21 +73,21 @@ export default App;
 ### index.js
 
 ```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 ## Forms with controlled input
 
 Forms with controlled inputs are the most common example included in libraries. In this approach, every time that the input value is changed the component is rendered again, so we save the input value in a specific state:
 
-```jsx
+```jsx copy
 function Input() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   return <input name="input" onChange={(e) => setInput(e.target.value)} />;
 }
@@ -97,8 +97,8 @@ I will create a folder for every component, this way the files should have the n
 
 For this form I will create a component in `Components/FormControlled/Input`, this component will be responsible to show a label, an input, and in case of error, a span with an error message. In this component we should validate whether the input was touched or not, it's helpful to show error messages.
 
-```jsx
-import React, { useRef, useEffect, ChangeEvent, useState } from 'react';
+```jsx copy
+import React, { useRef, useEffect, ChangeEvent, useState } from "react";
 
 function Input({ error, label, ...rest }) {
   const [touched, setTouched] = useState(false);
@@ -121,7 +121,7 @@ export default Input;
 
 The principal component will be `Components/FormControlled`, this is the component where we will build our form, so let's implement it:
 
-```jsx
+```jsx copy
 import React, { useState, useEffect } from "react";
 import Input from "./Input";
 
@@ -190,9 +190,9 @@ export default UserForm;
 
 In order to have the application working, we need to make some changes in `App.js`.
 
-```jsx
-import React from 'react';
-import FormControlled from './Components/FormControlled';
+```jsx copy
+import React from "react";
+import FormControlled from "./Components/FormControlled";
 
 function App() {
   return (
@@ -220,18 +220,18 @@ As mentioned before, we will use Yup to create input validations, I believe that
 In this case, I'm creating an object with the same structure as our form state, and adding some roles that should be applied, after that I add the message errors.
 
 ```javascript
-import * as yup from 'yup';
+import * as yup from "yup";
 
 export const FormValidations = yup.object().shape({
-  name: yup.string().required('Name is required'),
-  email: yup.string().email('E-mail is invalid').required('E-mail is required'),
-  password: yup.string().min(8, 'Minimum 8 chars').max(20, 'Max 20 chars'),
+  name: yup.string().required("Name is required"),
+  email: yup.string().email("E-mail is invalid").required("E-mail is required"),
+  password: yup.string().min(8, "Minimum 8 chars").max(20, "Max 20 chars"),
 });
 ```
 
 Let's back to the `Components/FormControlled` and add this validation in our form.
 
-```jsx
+```jsx copy
  /*...................*/
 import {FormValidations} from './index.validations'
 import useValidation from './../../hooks/useValidation'
@@ -311,8 +311,8 @@ I think that we can improve our code, we can split some parts of our code and cr
 First of all, I will create a folder called Hooks in the root of application `Hooks/useValidation`, inside the folder I will create a file called `index.js`. Inside this file, we just need to put part of our code, validate function, `useEffect` hook, and the error state. Finally, we return an object with the error state.
 
 ```javascript
-import React, { useState, useEffect } from 'react';
-import { ValidationError } from 'yup';
+import React, { useState, useEffect } from "react";
+import { ValidationError } from "yup";
 
 const useValidation = (values, schema) => {
   const [errors, setErrors] = useState({});
@@ -346,16 +346,16 @@ export default useValidation;
 
 I just need to remove the code that was added in `useValidation` hook, and import the new hook.
 
-```jsx
-import React, { useState, useEffect } from 'react';
-import Input from './Input';
-import { FormValidations } from './index.validations';
-import useValidation from './../../hooks/useValidation';
+```jsx copy
+import React, { useState, useEffect } from "react";
+import Input from "./Input";
+import { FormValidations } from "./index.validations";
+import useValidation from "./../../hooks/useValidation";
 
 const initialFormState = {
-  name: '',
-  email: '',
-  password: '',
+  name: "",
+  email: "",
+  password: "",
 };
 
 const UserForm = () => {
@@ -376,7 +376,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             name="name"
-            onChange={setInput('name')}
+            onChange={setInput("name")}
             label="Name"
             value={form.name}
             error={errors.name}
@@ -385,7 +385,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             name="email"
-            onChange={setInput('email')}
+            onChange={setInput("email")}
             label="E-mail"
             value={form.email}
             error={errors.email}
@@ -394,7 +394,7 @@ const UserForm = () => {
         <div className="form-group">
           <Input
             name="password"
-            onChange={setInput('password')}
+            onChange={setInput("password")}
             label="Password"
             value={form.password}
             error={errors.password}
