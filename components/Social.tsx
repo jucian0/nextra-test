@@ -3,9 +3,9 @@ import { DiscordIcon, GitHubIcon } from "nextra/icons";
 function Github() {
   return (
     <a
-      href="https://github.com/vercel/turbo"
+      href="https://github.com/juciano/createform"
       className="hidden p-2 text-current sm:flex hover:opacity-75"
-      title="Turbo GitHub repo"
+      title="Createform GitHub repo"
       target="_blank"
       rel="noreferrer"
     >
@@ -18,9 +18,9 @@ function Github() {
 function Discord() {
   return (
     <a
-      href="https://turbo.build/discord"
+      href="https://discord.gg/hUpRgv6H"
       className="hidden p-2 text-current sm:flex hover:opacity-75"
-      title="Turbo Discord server"
+      title="Createform Discord server"
       target="_blank"
       rel="noreferrer"
     >

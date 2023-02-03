@@ -3,8 +3,10 @@ import { ReactElement } from "react";
 import { Logo } from "./Logo";
 import { Discord, Github } from "./Social";
 import cn from "classnames";
+import HeaderLogo from "./HeaderLogo";
 
 export function Footer({ menu }: { menu?: boolean }): ReactElement {
+  console.log(menu);
   return (
     <footer className="bg-[#FAFAFA] pb-[env(safe-area-inset-bottom)]  relative dark:bg-[#111111]">
       <div className="absolute top-0 h-12 w-full -translate-y-full bg-gradient-to-t from-[#FAFAFA] to-transparent dark:from-black pointer-events-none" />
@@ -18,15 +20,7 @@ export function Footer({ menu }: { menu?: boolean }): ReactElement {
         )}
       >
         <div className="w-full md:flex md:justify-between">
-          <a
-            className="text-current"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="useform.org homepage"
-            href="https://useform.org"
-          >
-            <Logo />
-          </a>
+          <HeaderLogo />
           <ul className="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
             <li>
               <Link href="#" className="mr-4 hover:underline md:mr-6 ">

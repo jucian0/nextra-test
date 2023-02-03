@@ -9,12 +9,10 @@
   "creating-forms": "Creating forms",
   "validation": "Validation",
   "using-your-form": "Using your form",
-  "contact": {
-    "title": "Contact ↗",
+  "docs": {
+    "title": "Docs",
     "type": "page",
-    "href": "https://twitter.com/juciano_barbosa",
-    "newWindow": true,
-    "display": "hidden"
+    "href": "/quick-start"
   },
   "about": {
     "title": "About",
