@@ -9,6 +9,11 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@createform/react@^3.3.2":
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@createform/react/-/react-3.3.2.tgz#8a8b9b0c1c3f55e5f3262760f8d3e0729f9487fe"
+  integrity sha512-2iehKLX9qtzgwFi2B60zYYMM+BumsOUH/qkpJ1mg1jvGT/nSmduCuDQXqBR4vQR4hqRApy8VQKxcMTesDjehhQ==
+
 "@headlessui/react@^1.6.6":
   version "1.7.8"
   resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.8.tgz#d7b4a95d50f9a386f7d1259d5ff8a6d7eb552ef0"

@@ -56,6 +56,8 @@ export default function Features() {
   ))
 }
   </div>
+  <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-800 lg:my-8" />
+
     </div>
   );
 }

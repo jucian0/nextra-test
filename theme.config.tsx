@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useConfig, DocsThemeConfig, ThemeSwitch } from "nextra-theme-docs";
-// import Navigation from "./components/Navigation";
-// import HeaderLogo from "./components/HeaderLogo";
-// import ExtraContent from "./components/ExtraContent";
+
 import { Discord, Github } from "./components/Social";
 import { Footer } from "./components/Footer";
 import HeaderLogo from "./components/HeaderLogo";
@@ -13,13 +11,12 @@ const SITE_ROOT = "https://turbo.build";
 /**
  * @type {import('nextra-theme-docs').DocsThemeConfig}
  */
-const theme: DocsThemeConfig = {
+const theme = {
   sidebar: {
     defaultMenuCollapseLevel: Number.POSITIVE_INFINITY,
   },
-  docsRepositoryBase: "https://github.com/vercel/turbo/blob/main/docs",
+  docsRepositoryBase: "https://github.com/jucian0/createform/blob/main/docs",
   useNextSeoProps: function SEO() {
-    //const router = useRouter();
     const { frontMatter } = useConfig();
 
     const defaultTitle = frontMatter.overrideTitle || "Createform";
@@ -58,10 +55,10 @@ const theme: DocsThemeConfig = {
     float: true,
     // extraContent: ExtraContent,
   },
-  // font: false,
-  // feedback: {
-  //   link: "Question? Give us feedback →",
-  // },
+   font: false,
+  feedback: {
+    link: "Question? Give us feedback →",
+  },
   logo: HeaderLogo,
   logoLink: false,
   head: function Head() {
@@ -69,8 +66,6 @@ const theme: DocsThemeConfig = {
     const { frontMatter } = useConfig();
     const fullUrl =
       router.asPath === "/" ? SITE_ROOT : `${SITE_ROOT}${router.asPath}`;
-
-    //const asPath = router.asPath;
 
     let ogUrl = `${SITE_ROOT}${frontMatter.ogImage}`;
 
@@ -123,7 +118,6 @@ const theme: DocsThemeConfig = {
     text: "Edit this page on GitHub",
   },
   navbar: {
-    // component: Navigation,
     extraContent: (
       <>
         <Github />
